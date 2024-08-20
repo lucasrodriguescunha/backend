@@ -1,8 +1,15 @@
 package com.workspacepi.backend.recibo;
 
-import javax.xml.crypto.Data;
+// Importa a classe Date para trabalhar com datas
 import java.util.Date;
 
-public record ReciboRequestDTO(Date date, String favorecido, Double valor, String cpf, String observacao) {
+// Define um registro (record) chamado ReciboRequestDTO com os campos especificados
+public record ReciboRequestDTO(
+        Date date,
+        String favorecido,
+        Double valor,
+        String cpf,
+        String observacao) {
+    // O record automaticamente cria construtor, getters, equals, hashCode e toString
 
 }

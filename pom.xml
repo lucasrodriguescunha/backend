@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Define o arquivo de configuração do Maven para o projeto. -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <!-- Versão do modelo POM usada para o projeto. -->
     <modelVersion>4.0.0</modelVersion>
+    
+    <!-- Define o projeto pai, que fornece configuração e dependências padrão. -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.3.2</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/> <!-- Busca o pai do repositório -->
     </parent>
+    
+    <!-- Identificadores do projeto. -->
     <groupId>com.workspacePI</groupId>
     <artifactId>backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>backend</name>
     <description>backend</description>
+    
+    <!-- Informações adicionais do projeto, que podem ser deixadas em branco se não forem necessárias. -->
     <url/>
     <licenses>
         <license/>
@@ -26,15 +35,21 @@
         <tag/>
         <url/>
     </scm>
+    
+    <!-- Define propriedades do projeto, como a versão do Java usada. -->
     <properties>
         <java.version>17</java.version>
     </properties>
+    
+    <!-- Dependências do projeto. -->
     <dependencies>
+        <!-- Dependência para o starter web do Spring Boot, necessário para aplicações web. -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!-- Dependência para devtools do Spring Boot, útil para desenvolvimento com reinício automático. -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -42,23 +57,27 @@
             <optional>true</optional>
         </dependency>
 
+        <!-- Dependência para Lombok, que ajuda a reduzir o código boilerplate com anotações. -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
 
+        <!-- Dependência para o starter de testes do Spring Boot, necessário para testes automatizados. -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
 
+        <!-- Dependência para o starter de JPA do Spring Boot, necessário para a integração com JPA/Hibernate. -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
+        <!-- Dependência para o conector MySQL, necessário para conectar o Spring Boot ao banco de dados MySQL. -->
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
@@ -66,13 +85,16 @@
         </dependency>
     </dependencies>
 
+    <!-- Configura plugins do Maven para o projeto. -->
     <build>
         <plugins>
+            <!-- Plugin do Maven para o Spring Boot, que ajuda a empacotar e executar o aplicativo Spring Boot. -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <excludes>
+                        <!-- Exclui o Lombok do pacote final, pois é apenas uma dependência de desenvolvimento. -->
                         <exclude>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
